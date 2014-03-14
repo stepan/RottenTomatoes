@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BA294899C6EA4D0EB2122931 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4A65B581774F48A9D80858 /* libPods.a */; };
+		FDDFE24518D2DE9D007A3140 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFE24318D2DE9D007A3140 /* MovieCell.m */; };
+		FDDFE24618D2DE9D007A3140 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDDFE24418D2DE9D007A3140 /* MovieCell.xib */; };
 		FDED69B718D184C2009B1DCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED69B618D184C2009B1DCB /* Foundation.framework */; };
 		FDED69B918D184C2009B1DCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED69B818D184C2009B1DCB /* CoreGraphics.framework */; };
 		FDED69BB18D184C2009B1DCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED69BA18D184C2009B1DCB /* UIKit.framework */; };
@@ -36,6 +38,9 @@
 /* Begin PBXFileReference section */
 		3DC8D6E346514D1EA19308FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8B4A65B581774F48A9D80858 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDDFE24218D2DE9D007A3140 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		FDDFE24318D2DE9D007A3140 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		FDDFE24418D2DE9D007A3140 /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		FDED69B318D184C2009B1DCB /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDED69B618D184C2009B1DCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FDED69B818D184C2009B1DCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FDDFE24018D2DC46007A3140 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FDDFE24118D2DC4D007A3140 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDDFE24218D2DE9D007A3140 /* MovieCell.h */,
+				FDDFE24318D2DE9D007A3140 /* MovieCell.m */,
+				FDDFE24418D2DE9D007A3140 /* MovieCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		FDED69AA18D184C2009B1DCB = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +137,9 @@
 		FDED69BC18D184C2009B1DCB /* RottenTomatoes */ = {
 			isa = PBXGroup;
 			children = (
-				FDED69F218D18F52009B1DCB /* ViewControllers */,
+				FDDFE24018D2DC46007A3140 /* Models */,
+				FDDFE24118D2DC4D007A3140 /* Views */,
+				FDED69F218D18F52009B1DCB /* Controllers */,
 				FDED69C518D184C3009B1DCB /* AppDelegate.h */,
 				FDED69C618D184C3009B1DCB /* AppDelegate.m */,
 				FDED69C818D184C3009B1DCB /* Images.xcassets */,
@@ -135,14 +159,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FDED69F218D18F52009B1DCB /* ViewControllers */ = {
+		FDED69F218D18F52009B1DCB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FDED69ED18D18F41009B1DCB /* MoviesViewController.h */,
 				FDED69EE18D18F41009B1DCB /* MoviesViewController.m */,
 				FDED69EF18D18F41009B1DCB /* MoviesViewController.xib */,
 			);
-			name = ViewControllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +250,7 @@
 				FDED69E618D184FF009B1DCB /* .gitignore in Resources */,
 				FDED69C918D184C3009B1DCB /* Images.xcassets in Resources */,
 				FDED69F118D18F41009B1DCB /* MoviesViewController.xib in Resources */,
+				FDDFE24618D2DE9D007A3140 /* MovieCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDED69F018D18F41009B1DCB /* MoviesViewController.m in Sources */,
+				FDDFE24518D2DE9D007A3140 /* MovieCell.m in Sources */,
 				FDED69C718D184C3009B1DCB /* AppDelegate.m in Sources */,
 				FDED69C318D184C2009B1DCB /* main.m in Sources */,
 			);
