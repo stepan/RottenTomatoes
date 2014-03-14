@@ -8,6 +8,7 @@
 
 #import "MoviesViewController.h"
 #import "MovieCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -57,7 +58,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MovieCell *cell = (MovieCell *) [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     NSDictionary *movie = self.movies[indexPath.row];
-    [cell.title setText:movie[@"title"]];
+    [cell.titleLabel setText:movie[@"title"]];
+    [cell.synopsisLabel setText:movie[@"synopsis"]];
+    NSURL *url = [[NSURL alloc] initWithString:movie[@"posters"][@"original"]] ;
+    [cell.poster setImageWithURL:url];
     return cell;
 }
 

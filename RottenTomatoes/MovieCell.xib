@@ -18,33 +18,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVS-9u-S3Q">
-                        <rect key="frame" x="101" y="6" width="199" height="21"/>
+                        <rect key="frame" x="101" y="6" width="214" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="synopsis" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O65-es-VTx">
-                        <rect key="frame" x="101" y="33" width="199" height="58"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="cast" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cb-8r-iWe">
-                        <rect key="frame" x="101" y="90" width="199" height="33"/>
+                        <rect key="frame" x="101" y="90" width="214" height="33"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="synopsis" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="214" translatesAutoresizingMaskIntoConstraints="NO" id="iIK-Gg-NHD">
+                        <rect key="frame" x="101" y="26" width="214" height="67"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="cast" destination="9cb-8r-iWe" id="eeE-9T-l0E"/>
-                <outlet property="image" destination="NYT-q3-8S7" id="8Xx-63-lPo"/>
-                <outlet property="synopsis" destination="O65-es-VTx" id="N1d-ke-yV6"/>
-                <outlet property="title" destination="kVS-9u-S3Q" id="a8w-ye-C8U"/>
+                <outlet property="castText" destination="9cb-8r-iWe" id="IvR-pD-Xig"/>
+                <outlet property="poster" destination="NYT-q3-8S7" id="4SJ-R3-hdX"/>
+                <outlet property="synopsisLabel" destination="iIK-Gg-NHD" id="C0q-BC-pyo"/>
+                <outlet property="titleLabel" destination="kVS-9u-S3Q" id="T8F-rV-DkB"/>
             </connections>
         </tableViewCell>
     </objects>
