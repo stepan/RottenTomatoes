@@ -23,6 +23,7 @@
 		FDED69E618D184FF009B1DCB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FDED69E518D184FF009B1DCB /* .gitignore */; };
 		FDED69F018D18F41009B1DCB /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDED69EE18D18F41009B1DCB /* MoviesViewController.m */; };
 		FDED69F118D18F41009B1DCB /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDED69EF18D18F41009B1DCB /* MoviesViewController.xib */; };
+		FDED69F518D3AD32009B1DCB /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = FDED69F418D3AD32009B1DCB /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		FDED69ED18D18F41009B1DCB /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
 		FDED69EE18D18F41009B1DCB /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		FDED69EF18D18F41009B1DCB /* MoviesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
+		FDED69F318D3AD32009B1DCB /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		FDED69F418D3AD32009B1DCB /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 		FDDFE24018D2DC46007A3140 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FDED69F318D3AD32009B1DCB /* Movie.h */,
+				FDED69F418D3AD32009B1DCB /* Movie.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			files = (
 				FDED69F018D18F41009B1DCB /* MoviesViewController.m in Sources */,
 				FDDFE24518D2DE9D007A3140 /* MovieCell.m in Sources */,
+				FDED69F518D3AD32009B1DCB /* Movie.m in Sources */,
 				FDED69C718D184C3009B1DCB /* AppDelegate.m in Sources */,
 				FDED69C318D184C2009B1DCB /* main.m in Sources */,
 			);

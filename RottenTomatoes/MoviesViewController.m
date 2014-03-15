@@ -36,9 +36,22 @@
     NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        self.movies = object[@"movies"];
-        [self.tableView reloadData];
+        if (connectionError) {
+            UILabel *networkErrorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 65, 320, 30)];
+            [networkErrorLabel setText:@"Network Error"];
+            networkErrorLabel.textColor = [UIColor whiteColor];
+            networkErrorLabel.backgroundColor = [UIColor blackColor];
+            networkErrorLabel.alpha = 0.5;
+            networkErrorLabel.textAlignment = NSTextAlignmentCenter;
+            [networkErrorLabel setFont:[UIFont systemFontOfSize:14]];
+            [self.view addSubview:networkErrorLabel];
+        }
+        else{
+            id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            self.movies = object[@"movies"];
+            [self.tableView reloadData];
+        }
+
     }];
 }
 
