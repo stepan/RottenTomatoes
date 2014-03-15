@@ -9,6 +9,7 @@
 #import "MoviesViewController.h"
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "MovieViewController.h"
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -30,6 +31,7 @@
 {
     [super viewDidLoad];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     self.tableView.rowHeight = 125;
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
 
@@ -37,11 +39,11 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (connectionError) {
-            UILabel *networkErrorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 65, 320, 30)];
+            UILabel *networkErrorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 64, 320, 30)];
             [networkErrorLabel setText:@"Network Error"];
             networkErrorLabel.textColor = [UIColor whiteColor];
-            networkErrorLabel.backgroundColor = [UIColor blackColor];
-            networkErrorLabel.alpha = 0.5;
+            networkErrorLabel.backgroundColor = [UIColor redColor];
+            networkErrorLabel.alpha = 0.7;
             networkErrorLabel.textAlignment = NSTextAlignmentCenter;
             [networkErrorLabel setFont:[UIFont systemFontOfSize:14]];
             [self.view addSubview:networkErrorLabel];
@@ -75,7 +77,15 @@
     [cell.synopsisLabel setText:movie[@"synopsis"]];
     NSURL *url = [[NSURL alloc] initWithString:movie[@"posters"][@"original"]] ;
     [cell.poster setImageWithURL:url];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MovieViewController *movieViewController = [[MovieViewController alloc] init];
+    [self.navigationController pushViewController:movieViewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

@@ -10,6 +10,8 @@
 		BA294899C6EA4D0EB2122931 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4A65B581774F48A9D80858 /* libPods.a */; };
 		FDDFE24518D2DE9D007A3140 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFE24318D2DE9D007A3140 /* MovieCell.m */; };
 		FDDFE24618D2DE9D007A3140 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDDFE24418D2DE9D007A3140 /* MovieCell.xib */; };
+		FDDFE24A18D4BD55007A3140 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFE24818D4BD55007A3140 /* MovieViewController.m */; };
+		FDDFE24B18D4BD55007A3140 /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDDFE24918D4BD55007A3140 /* MovieViewController.xib */; };
 		FDED69B718D184C2009B1DCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED69B618D184C2009B1DCB /* Foundation.framework */; };
 		FDED69B918D184C2009B1DCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED69B818D184C2009B1DCB /* CoreGraphics.framework */; };
 		FDED69BB18D184C2009B1DCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED69BA18D184C2009B1DCB /* UIKit.framework */; };
@@ -23,7 +25,6 @@
 		FDED69E618D184FF009B1DCB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FDED69E518D184FF009B1DCB /* .gitignore */; };
 		FDED69F018D18F41009B1DCB /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDED69EE18D18F41009B1DCB /* MoviesViewController.m */; };
 		FDED69F118D18F41009B1DCB /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDED69EF18D18F41009B1DCB /* MoviesViewController.xib */; };
-		FDED69F518D3AD32009B1DCB /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = FDED69F418D3AD32009B1DCB /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,9 @@
 		FDDFE24218D2DE9D007A3140 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		FDDFE24318D2DE9D007A3140 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		FDDFE24418D2DE9D007A3140 /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		FDDFE24718D4BD55007A3140 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		FDDFE24818D4BD55007A3140 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		FDDFE24918D4BD55007A3140 /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
 		FDED69B318D184C2009B1DCB /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDED69B618D184C2009B1DCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FDED69B818D184C2009B1DCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,8 +63,6 @@
 		FDED69ED18D18F41009B1DCB /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
 		FDED69EE18D18F41009B1DCB /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		FDED69EF18D18F41009B1DCB /* MoviesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
-		FDED69F318D3AD32009B1DCB /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
-		FDED69F418D3AD32009B1DCB /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +93,6 @@
 		FDDFE24018D2DC46007A3140 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FDED69F318D3AD32009B1DCB /* Movie.h */,
-				FDED69F418D3AD32009B1DCB /* Movie.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -170,6 +170,9 @@
 				FDED69ED18D18F41009B1DCB /* MoviesViewController.h */,
 				FDED69EE18D18F41009B1DCB /* MoviesViewController.m */,
 				FDED69EF18D18F41009B1DCB /* MoviesViewController.xib */,
+				FDDFE24718D4BD55007A3140 /* MovieViewController.h */,
+				FDDFE24818D4BD55007A3140 /* MovieViewController.m */,
+				FDDFE24918D4BD55007A3140 /* MovieViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				FDED69C118D184C2009B1DCB /* InfoPlist.strings in Resources */,
 				FDED69E618D184FF009B1DCB /* .gitignore in Resources */,
 				FDED69C918D184C3009B1DCB /* Images.xcassets in Resources */,
+				FDDFE24B18D4BD55007A3140 /* MovieViewController.xib in Resources */,
 				FDED69F118D18F41009B1DCB /* MoviesViewController.xib in Resources */,
 				FDDFE24618D2DE9D007A3140 /* MovieCell.xib in Resources */,
 			);
@@ -307,8 +311,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDED69F018D18F41009B1DCB /* MoviesViewController.m in Sources */,
+				FDDFE24A18D4BD55007A3140 /* MovieViewController.m in Sources */,
 				FDDFE24518D2DE9D007A3140 /* MovieCell.m in Sources */,
-				FDED69F518D3AD32009B1DCB /* Movie.m in Sources */,
 				FDED69C718D184C3009B1DCB /* AppDelegate.m in Sources */,
 				FDED69C318D184C2009B1DCB /* main.m in Sources */,
 			);
