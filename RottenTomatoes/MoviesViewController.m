@@ -13,6 +13,7 @@
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *networkErrorLabel;
 @property (strong, nonatomic) NSArray *movies;
 @end
 
@@ -39,16 +40,10 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (connectionError) {
-            UILabel *networkErrorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 64, 320, 30)];
-            [networkErrorLabel setText:@"Network Error"];
-            networkErrorLabel.textColor = [UIColor whiteColor];
-            networkErrorLabel.backgroundColor = [UIColor redColor];
-            networkErrorLabel.alpha = 0.7;
-            networkErrorLabel.textAlignment = NSTextAlignmentCenter;
-            [networkErrorLabel setFont:[UIFont systemFontOfSize:14]];
-            [self.view addSubview:networkErrorLabel];
+            [self.networkErrorLabel setHidden:NO];
         }
         else{
+            [self.networkErrorLabel setHidden:YES];
             self.movies = [Movie getMovies:[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]];
             [self.tableView reloadData];
         }
