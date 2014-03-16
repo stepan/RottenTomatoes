@@ -12,6 +12,7 @@
 		FDDFE24618D2DE9D007A3140 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDDFE24418D2DE9D007A3140 /* MovieCell.xib */; };
 		FDDFE24A18D4BD55007A3140 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFE24818D4BD55007A3140 /* MovieViewController.m */; };
 		FDDFE24B18D4BD55007A3140 /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDDFE24918D4BD55007A3140 /* MovieViewController.xib */; };
+		FDDFE24E18D517B7007A3140 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFE24D18D517B7007A3140 /* Movie.m */; };
 		FDED69B718D184C2009B1DCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED69B618D184C2009B1DCB /* Foundation.framework */; };
 		FDED69B918D184C2009B1DCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED69B818D184C2009B1DCB /* CoreGraphics.framework */; };
 		FDED69BB18D184C2009B1DCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED69BA18D184C2009B1DCB /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		FDDFE24718D4BD55007A3140 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		FDDFE24818D4BD55007A3140 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		FDDFE24918D4BD55007A3140 /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
+		FDDFE24C18D517B7007A3140 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		FDDFE24D18D517B7007A3140 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		FDED69B318D184C2009B1DCB /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDED69B618D184C2009B1DCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FDED69B818D184C2009B1DCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,6 +96,8 @@
 		FDDFE24018D2DC46007A3140 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FDDFE24C18D517B7007A3140 /* Movie.h */,
+				FDDFE24D18D517B7007A3140 /* Movie.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDDFE24E18D517B7007A3140 /* Movie.m in Sources */,
 				FDED69F018D18F41009B1DCB /* MoviesViewController.m in Sources */,
 				FDDFE24A18D4BD55007A3140 /* MovieViewController.m in Sources */,
 				FDDFE24518D2DE9D007A3140 /* MovieCell.m in Sources */,

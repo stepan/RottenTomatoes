@@ -8,7 +8,7 @@
 
 #import "MoviesViewController.h"
 #import "MovieCell.h"
-#import "UIImageView+AFNetworking.h"
+#import "Movie.h"
 #import "MovieViewController.h"
 
 @interface MoviesViewController ()
@@ -49,8 +49,7 @@
             [self.view addSubview:networkErrorLabel];
         }
         else{
-            id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            self.movies = object[@"movies"];
+            self.movies = [Movie getMovies:[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]];
             [self.tableView reloadData];
         }
 
@@ -72,18 +71,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MovieCell *cell = (MovieCell *) [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
-    NSDictionary *movie = self.movies[indexPath.row];
-    [cell.titleLabel setText:movie[@"title"]];
-    [cell.synopsisLabel setText:movie[@"synopsis"]];
-    NSURL *url = [[NSURL alloc] initWithString:movie[@"posters"][@"original"]] ;
-    [cell.poster setImageWithURL:url];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    Movie *movie = self.movies[indexPath.row];
+    [cell setData:movie];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MovieViewController *movieViewController = [[MovieViewController alloc] init];
+    MovieViewController *movieViewController = [[MovieViewController alloc] initWithMovie:self.movies[indexPath.row]];
     [self.navigationController pushViewController:movieViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
