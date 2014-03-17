@@ -22,7 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2.0)
-  - MMProgressHUD
+  - MMProgressHUD (~> 0.2.2)
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56

@@ -35,6 +35,7 @@ NSString * const apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.separatorInset = UIEdgeInsetsZero;
     self.tableView.rowHeight = 125;
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
     
@@ -53,15 +54,15 @@ NSString * const apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/
 {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:apiURL]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        [MMProgressHUD dismiss];
         if (connectionError) {
             [self.networkErrorLabel setHidden:NO];
         }
         else{
-            [MMProgressHUD dismiss];
             [self.networkErrorLabel setHidden:YES];
             self.movies = [Movie getMovies:[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]];
-            [self.tableView reloadData];
         }
+        [self.tableView reloadData];
         [self.refreshControl endRefreshing];
         
     }];
