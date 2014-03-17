@@ -10,6 +10,7 @@
 #import "MovieCell.h"
 #import "Movie.h"
 #import "MovieViewController.h"
+#import "MMProgressHUD.h"
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -43,6 +44,8 @@ NSString * const apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/
     [self.tableView addSubview:refreshControl];
     self.refreshControl = refreshControl;
     
+    [MMProgressHUD show];
+    
     [self fetchMovies];
 }
 
@@ -54,6 +57,7 @@ NSString * const apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/
             [self.networkErrorLabel setHidden:NO];
         }
         else{
+            [MMProgressHUD dismiss];
             [self.networkErrorLabel setHidden:YES];
             self.movies = [Movie getMovies:[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]];
             [self.tableView reloadData];

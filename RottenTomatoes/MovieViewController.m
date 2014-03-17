@@ -23,17 +23,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setTitle:self.movie.title];
     [self.castLabel setText:self.movie.cast];
     [self.synopsisLabel setText:self.movie.synopsis];
     NSURL *url = [[NSURL alloc] initWithString:self.movie.posterUrl];
     [self.poster setImageWithURL:url];
     self.poster.contentMode = UIViewContentModeScaleAspectFill;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self setTitle:self.movie.title];
 }
 
 - (void)didReceiveMemoryWarning
