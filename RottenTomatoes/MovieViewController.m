@@ -17,9 +17,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title = self.movie.title;
-    }
     return self;
 }
 
@@ -31,6 +28,12 @@
     NSURL *url = [[NSURL alloc] initWithString:self.movie.posterUrl];
     [self.poster setImageWithURL:url];
     self.poster.contentMode = UIViewContentModeScaleAspectFill;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setTitle:self.movie.title];
 }
 
 - (void)didReceiveMemoryWarning
