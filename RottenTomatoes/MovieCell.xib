@@ -41,10 +41,10 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="castLabel" destination="FdA-NG-jT1" id="xFc-zk-CMh"/>
-                <outlet property="poster" destination="NYT-q3-8S7" id="4SJ-R3-hdX"/>
-                <outlet property="synopsisLabel" destination="iIK-Gg-NHD" id="C0q-BC-pyo"/>
-                <outlet property="titleLabel" destination="kVS-9u-S3Q" id="T8F-rV-DkB"/>
+                <outlet property="castLabel" destination="FdA-NG-jT1" id="BX1-46-nZI"/>
+                <outlet property="movieTitleLabel" destination="kVS-9u-S3Q" id="lq3-XI-Idk"/>
+                <outlet property="posterView" destination="NYT-q3-8S7" id="98a-IC-F5u"/>
+                <outlet property="synopsisLabel" destination="iIK-Gg-NHD" id="v38-dF-g3W"/>
             </connections>
         </tableViewCell>
     </objects>

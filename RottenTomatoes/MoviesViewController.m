@@ -66,8 +66,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MovieCell *cell = (MovieCell *) [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
-    Movie *movie = self.movies[indexPath.row];
-    [cell setData:movie];
+    cell.movie = self.movies[indexPath.row];
     return cell;
 }
 

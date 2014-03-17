@@ -9,6 +9,14 @@
 #import "UIImageView+AFNetworking.h"
 #import "MovieCell.h"
 
+@interface MovieCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *posterView;
+@property (weak, nonatomic) IBOutlet UILabel *movieTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UILabel *castLabel;
+
+@end
+
 @implementation MovieCell
 
 - (void)awakeFromNib
@@ -23,14 +31,21 @@
     // Configure the view for the selected state
 }
 
-- (void) setData:(Movie *) movie
+- (void) styleCell
 {
-    [self.titleLabel setText:movie.title];
-    [self.synopsisLabel setText:movie.synopsis];
-    NSURL *url = [[NSURL alloc] initWithString:movie.posterUrl] ;
-    [self.poster setImageWithURL:url];
-    [self.castLabel setText:movie.cast];
+    [self.movieTitleLabel setText:self.movie.title];
+    [self.synopsisLabel setText:self.movie.synopsis];
+    NSURL *url = [[NSURL alloc] initWithString:self.movie.posterUrl] ;
+    [self.posterView setImageWithURL:url];
+    [self.castLabel setText:self.movie.cast];
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+}
+
+- (void) setMovie:(Movie *)movie
+{
+    _movie = movie;
+    [self styleCell];
+    
 }
 
 @end
