@@ -15,10 +15,11 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *networkErrorLabel;
 @property (strong, nonatomic) NSArray *movies;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation MoviesViewController
-
+NSString * const apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,9 +36,19 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = 125;
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    [refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+    self.refreshControl = refreshControl;
+    
+    [self fetchMovies];
+}
 
-    NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+- (void)fetchMovies
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:apiURL]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (connectionError) {
             [self.networkErrorLabel setHidden:NO];
@@ -47,7 +58,8 @@
             self.movies = [Movie getMovies:[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]];
             [self.tableView reloadData];
         }
-
+        [self.refreshControl endRefreshing];
+        
     }];
 }
 
@@ -57,7 +69,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table view methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
