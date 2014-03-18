@@ -17,10 +17,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *networkErrorLabel;
 @property (strong, nonatomic) NSArray *movies;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) NSString *apiURL;
 @end
 
 @implementation MoviesViewController
-NSString * const apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,6 +29,23 @@ NSString * const apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/
     }
     return self;
 }
+
+- (id) initWithMode:(enum MoviesViewControllerMode)aMode
+{
+    self = [self init];
+    if (self) {
+        if (aMode == MoviesViewControllerModeBoxOffice) {
+            [self setTitle:@"Box Office"];
+            self.apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
+        }
+        else{
+            [self setTitle:@"Top Rentals"];
+            self.apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
+        }
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad
 {
@@ -44,15 +61,15 @@ NSString * const apiURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/
     [refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
     self.refreshControl = refreshControl;
-    
-    [MMProgressHUD show];
+    [MMProgressHUD setPresentationStyle:MMProgressHUDPresentationStyleFade];
+    [MMProgressHUD showWithTitle:@"Loading"];
     
     [self fetchMovies];
 }
 
 - (void)fetchMovies
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:apiURL]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.apiURL]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         [MMProgressHUD dismiss];
         if (connectionError) {

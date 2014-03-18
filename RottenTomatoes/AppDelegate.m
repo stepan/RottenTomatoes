@@ -14,9 +14,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    MoviesViewController *moviesViewController = [[MoviesViewController alloc] init];
-    UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:moviesViewController];
-    self.window.rootViewController = unc;
+    UIColor *color = [UIColor colorWithRed:0.8 green:0.9 blue:0.9 alpha:0.4];
+    
+    MoviesViewController *bmvc = [[MoviesViewController alloc] initWithMode:MoviesViewControllerModeBoxOffice];
+    UINavigationController *bunc = [[UINavigationController alloc] initWithRootViewController:bmvc];
+    [bunc.navigationBar setBarTintColor:color];
+    
+    MoviesViewController *dmvc = [[MoviesViewController alloc] initWithMode:MoviesViewControllerModeDVD];
+    UINavigationController *dunc = [[UINavigationController alloc] initWithRootViewController:dmvc];
+    [dunc.navigationBar setBarTintColor:color];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
+    
+    [tabBarController.tabBar setBarTintColor:color];
+    [tabBarController.tabBar setTintColor:[UIColor blackColor]];
+    tabBarController.viewControllers = @[bunc, dunc];
+
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }

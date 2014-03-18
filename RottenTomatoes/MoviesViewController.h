@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoviesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+enum MoviesViewControllerMode {
+    MoviesViewControllerModeDVD,
+    MoviesViewControllerModeBoxOffice
+};
 
+@interface MoviesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    enum MoviesViewControllerMode mode;
+}
+-(id)initWithMode:(enum MoviesViewControllerMode)aMode;
 
 @end
