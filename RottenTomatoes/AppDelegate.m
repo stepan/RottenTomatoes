@@ -20,7 +20,7 @@
     UINavigationController *bunc = [[UINavigationController alloc] initWithRootViewController:bmvc];
     [bunc.navigationBar setBarTintColor:color];
     
-    MoviesViewController *dmvc = [[MoviesViewController alloc] initWithMode:MoviesViewControllerModeDVD];
+    MoviesViewController *dmvc = [[MoviesViewController alloc] initWithMode:MoviesViewControllerModeRental];
     UINavigationController *dunc = [[UINavigationController alloc] initWithRootViewController:dmvc];
     [dunc.navigationBar setBarTintColor:color];
     

@@ -48,4 +48,9 @@
     
 }
 
++ (NSString *)cellIdentifier
+{
+    return @"MovieCell";
+}
+
 @end

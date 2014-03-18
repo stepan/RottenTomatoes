@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 enum MoviesViewControllerMode {
-    MoviesViewControllerModeDVD,
+    MoviesViewControllerModeRental,
     MoviesViewControllerModeBoxOffice
 };
 

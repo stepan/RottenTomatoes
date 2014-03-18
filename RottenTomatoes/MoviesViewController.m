@@ -54,7 +54,7 @@
     self.tableView.delegate = self;
     self.tableView.separatorInset = UIEdgeInsetsZero;
     self.tableView.rowHeight = 125;
-    [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:[MovieCell cellIdentifier]];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
@@ -99,7 +99,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MovieCell *cell = (MovieCell *) [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
+    MovieCell *cell = (MovieCell *) [tableView dequeueReusableCellWithIdentifier:[MovieCell cellIdentifier] forIndexPath:indexPath];
     cell.movie = self.movies[indexPath.row];
     return cell;
 }
